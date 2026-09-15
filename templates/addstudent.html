@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>Student Management System</h2>
+    <a href="/dashboard">Dashboard</a>
+</nav>
+
+
+<h1>Add Student</h1>
+
+
+<form action="/addstudent" 
+      method="POST" 
+      enctype="multipart/form-data"
+      onsubmit="return validateForm()">
+
+
+    <label>Student Name</label>
+    <input type="text" 
+           name="name" 
+           id="name"
+           placeholder="Enter Student Name" 
+           required>
+
+
+    <label>Roll Number</label>
+    <input type="text" 
+           name="roll"
+           placeholder="Enter Roll Number" 
+           required>
+
+
+    <label>Department</label>
+    <input type="text" 
+           name="department"
+           placeholder="Enter Department" 
+           required>
+
+
+    <label>Year</label>
+    <input type="text" 
+           name="year"
+           placeholder="Enter Year" 
+           required>
+
+
+    <label>Gender</label><br>
+
+    <input type="radio" name="gender" value="Male" required>
+    Male
+
+    <input type="radio" name="gender" value="Female">
+    Female
+
+    <br><br>
+
+
+    <label>Phone Number</label>
+
+    <input type="text" 
+           name="phone"
+           id="phone"
+           placeholder="Enter Phone Number"
+           maxlength="10"
+           required>
+
+
+    <label>Email</label>
+
+    <input type="email" 
+           name="email"
+           id="email"
+           placeholder="Enter Email"
+           required>
+
+
+           <label>Student Photo</label>
+<input type="file" name="photo">
+
+<br><br>
+
+<button type="submit">💾 Save Student</button>
+
+
+</form>
+
+
+
+<script>
+
+function validateForm(){
+
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+
+
+    if(phone.length != 10 || isNaN(phone)){
+
+        alert("Enter valid 10 digit phone number");
+        return false;
+
+    }
+
+
+    if(!email.includes("@")){
+
+        alert("Enter valid email address");
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+    <h2>Student Management System</h2>
+
+    <a href="/logout">Logout</a>
+
+</nav>
+
+
+<h1 align="center">
+    Welcome to Dashboard
+</h1>
+
+
+<!-- CARDS -->
+
+<div class="cards">
+
+
+    <div class="card">
+
+        <h2>📊</h2>
+
+        <h3>Total Students</h3>
+
+        <h1>{{ total_students }}</h1>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>👨‍🎓</h2>
+
+        <h3>Add Student</h3>
+
+        <a href="/addstudent">
+            Open
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>📋</h2>
+
+        <h3>View Students</h3>
+
+        <a href="/viewstudents">
+            Open
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>✏️</h2>
+
+        <h3>Update Student</h3>
+
+        <a href="/viewstudents">
+            Open
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🗑️</h2>
+
+        <h3>Delete Student</h3>
+
+        <a href="/viewstudents">
+            Open
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<br><br>
+
+
+<!-- DEPARTMENT WISE -->
+
+<h2 align="center">
+    Department Wise Students
+</h2>
+
+
+<table border="1"
+       align="center"
+       cellpadding="10">
+
+    <tr>
+
+        <th>Department</th>
+
+        <th>Total Students</th>
+
+    </tr>
+
+
+    {% for data in department_data %}
+
+    <tr>
+
+        <td>{{ data[0] }}</td>
+
+        <td>{{ data[1] }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+
+</table>
+
+
+<br><br>
+
+
+<!-- GENDER WISE -->
+
+<h2 align="center">
+    Gender Wise Students
+</h2>
+
+
+<table border="1"
+       align="center"
+       cellpadding="10">
+
+    <tr>
+
+        <th>Gender</th>
+
+        <th>Total Students</th>
+
+    </tr>
+
+
+    {% for data in gender_data %}
+
+    <tr>
+
+        <td>{{ data[0] }}</td>
+
+        <td>{{ data[1] }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+
+</table>
+
+
+<br><br>
+
+
+<!-- DEPARTMENT CHART -->
+
+<h2 align="center">
+    Department Chart
+</h2>
+
+
+<div style="width:80%; max-width:800px; margin:auto;">
+
+    <canvas id="deptChart"></canvas>
+
+</div>
+
+
+<br><br>
+
+
+<!-- GENDER CHART -->
+
+<h2 align="center">
+    Gender Chart
+</h2>
+
+
+<div style="width:60%; max-width:600px; margin:auto;">
+
+    <canvas id="genderChart"></canvas>
+
+</div>
+
+
+
+<script>
+
+
+/* -----------------------------
+   DEPARTMENT DATA
+----------------------------- */
+
+
+const deptLabels = [
+
+    {% for data in department_data %}
+
+        "{{ data[0] }}"
+
+        {% if not loop.last %},{% endif %}
+
+    {% endfor %}
+
+];
+
+
+const deptValues = [
+
+    {% for data in department_data %}
+
+        {{ data[1] }}
+
+        {% if not loop.last %},{% endif %}
+
+    {% endfor %}
+
+];
+
+
+
+/* -----------------------------
+   DEPARTMENT CHART
+----------------------------- */
+
+
+new Chart(
+
+    document.getElementById("deptChart"),
+
+    {
+
+        type: "bar",
+
+        data: {
+
+            labels: deptLabels,
+
+            datasets: [
+
+                {
+
+                    label: "Number of Students",
+
+                    data: deptValues
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    ticks: {
+
+                        stepSize: 1
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+);
+
+
+
+/* -----------------------------
+   GENDER DATA
+----------------------------- */
+
+
+const genderLabels = [
+
+    {% for data in gender_data %}
+
+        "{{ data[0] }}"
+
+        {% if not loop.last %},{% endif %}
+
+    {% endfor %}
+
+];
+
+
+const genderValues = [
+
+    {% for data in gender_data %}
+
+        {{ data[1] }}
+
+        {% if not loop.last %},{% endif %}
+
+    {% endfor %}
+
+];
+
+
+
+/* -----------------------------
+   GENDER CHART
+----------------------------- */
+
+
+new Chart(
+
+    document.getElementById("genderChart"),
+
+    {
+
+        type: "pie",
+
+        data: {
+
+            labels: genderLabels,
+
+            datasets: [
+
+                {
+
+                    label: "Students",
+
+                    data: genderValues
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true
+
+        }
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>

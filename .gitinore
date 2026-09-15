@@ -1,0 +1,10 @@
+students.db
+students_report.pdf
+
+static/uploads/
+
+__pycache__/
+*.pyc
+
+venv/
+.venv/

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <h1 align="center">Student Profile</h1>
+
+    <div align="center">
+
+        <div class="profile-card">
+
+            <!-- Student Photo -->
+
+            {% if student[8] %}
+
+            <img src="{{ url_for('static',
+                         filename='uploads/' + student[8]) }}"
+                 width="150"
+                 height="150">
+
+            {% endif %}
+
+
+            <!-- Student Details -->
+
+            <h2>{{ student[1] }}</h2>
+
+            <p>
+                <b>Roll No:</b> {{ student[2] }}
+            </p>
+
+            <p>
+                <b>Department:</b> {{ student[3] }}
+            </p>
+
+            <p>
+                <b>Year:</b> {{ student[4] }}
+            </p>
+
+            <p>
+                <b>Gender:</b> {{ student[5] }}
+            </p>
+
+            <p>
+                <b>Phone:</b> {{ student[6] }}
+            </p>
+
+            <p>
+                <b>Email:</b> {{ student[7] }}
+            </p>
+
+
+            <hr>
+
+
+            <!-- Marksheets -->
+
+            <h3>📚 Marksheets</h3>
+
+            <div class="marksheet-container">
+
+
+                <!-- 10th -->
+
+                <p>
+
+                    <b>10th Marksheet:</b>
+
+                    {% if student[9] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[9]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- 11th -->
+
+                <p>
+
+                    <b>11th Marksheet:</b>
+
+                    {% if student[10] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[10]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- 12th -->
+
+                <p>
+
+                    <b>12th Marksheet:</b>
+
+                    {% if student[11] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[11]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- Semester 1 -->
+
+                <p>
+
+                    <b>Semester 1:</b>
+
+                    {% if student[12] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[12]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- Semester 2 -->
+
+                <p>
+
+                    <b>Semester 2:</b>
+
+                    {% if student[13] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[13]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- Semester 3 -->
+
+                <p>
+
+                    <b>Semester 3:</b>
+
+                    {% if student[14] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[14]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- Semester 4 -->
+
+                <p>
+
+                    <b>Semester 4:</b>
+
+                    {% if student[15] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[15]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- Semester 5 -->
+
+                <p>
+
+                    <b>Semester 5:</b>
+
+                    {% if student[16] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[16]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- Semester 6 -->
+
+                <p>
+
+                    <b>Semester 6:</b>
+
+                    {% if student[17] %}
+
+                    <a href="{{ url_for(
+                        'static',
+                        filename='uploads/' + student[17]
+                    ) }}"
+                       target="_blank">
+
+                        👁️ View
+
+                    </a>
+
+                    {% else %}
+
+                    <span>Not Uploaded</span>
+
+                    {% endif %}
+
+                </p>
+
+
+            </div>
+
+
+            <br>
+
+
+            <!-- Back -->
+
+            <div align="center">
+
+                <a href="{{ url_for('viewstudents') }}">
+
+                    <button type="button">
+                        ← Back to Students
+                    </button>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

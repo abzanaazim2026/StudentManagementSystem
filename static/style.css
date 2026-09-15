@@ -1,0 +1,211 @@
+body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background:#f1f5f9;
+    margin:0;
+    padding:0;
+}
+
+
+/* Navbar */
+nav{
+    background:#1e3a8a;
+    color:white;
+    padding:18px 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2{
+    color:#fbcfe8;
+    margin:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    background:#ef4444;
+    padding:10px 22px;
+    border-radius:20px;
+}
+
+nav a:hover{
+    background:#dc2626;
+}
+
+
+/* Headings */
+h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin:35px;
+}
+
+h2{
+    color:#1e3a8a;
+}
+
+
+/* Dashboard Cards */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+
+.card{
+    background:white;
+    width:230px;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+
+.card h2{
+    font-size:45px;
+}
+
+
+.card h3{
+    color:#334155;
+}
+
+
+.card a{
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 25px;
+    border-radius:20px;
+}
+
+
+.card a:hover{
+    background:#1d4ed8;
+}
+
+
+/* Forms */
+form{
+    width:400px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+}
+
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:11px 22px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+
+button:hover{
+    background:#1d4ed8;
+}
+
+
+/* Table */
+table{
+    width:95%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+th{
+    background:#1e3a8a;
+    color:white;
+    padding:14px;
+}
+
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+
+/* Profile Card */
+.profile-card{
+    width:350px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* Login Box */
+.login-box{
+    width:350px;
+    margin:100px auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* Mobile Responsive */
+@media(max-width:600px){
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    table{
+        width:100%;
+        font-size:12px;
+    }
+
+    form{
+        width:85%;
+    }
+
+}
+.marksheet-container p{
+    background:white;
+    padding:12px;
+    margin:10px;py
+    border-radius:10px;
+}
+
+.marksheet-container a{
+    background:#2563eb;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    text-decoration:none;
+}

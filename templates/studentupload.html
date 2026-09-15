@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Marksheet Upload</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="upload-container">
+
+        <h1>📚 Student Marksheet Upload</h1>
+
+        <p class="subtitle">
+            Enter your Roll Number and upload your marksheets
+        </p>
+
+        {% if error %}
+        <div class="error-message">
+            ❌ {{ error }}
+        </div>
+        {% endif %}
+
+        {% if success %}
+        <div class="success-message">
+            ✅ {{ success }}
+        </div>
+        {% endif %}
+
+
+        <form action="{{ url_for('studentupload') }}"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <!-- Roll Number -->
+
+            <div class="form-group">
+
+                <label>🎓 Roll Number</label>
+
+                <input type="text"
+                       name="roll"
+                       placeholder="Enter your Roll Number"
+                       required>
+
+            </div>
+
+
+            <!-- 10th -->
+
+            <div class="form-group">
+
+                <label>📄 10th Marksheet</label>
+
+                <input type="file"
+                       name="tenth_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- 11th -->
+
+            <div class="form-group">
+
+                <label>📄 11th Marksheet</label>
+
+                <input type="file"
+                       name="eleventh_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- 12th -->
+
+            <div class="form-group">
+
+                <label>📄 12th Marksheet</label>
+
+                <input type="file"
+                       name="twelfth_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Semester 1 -->
+
+            <div class="form-group">
+
+                <label>📄 Semester 1 Marksheet</label>
+
+                <input type="file"
+                       name="sem1_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Semester 2 -->
+
+            <div class="form-group">
+
+                <label>📄 Semester 2 Marksheet</label>
+
+                <input type="file"
+                       name="sem2_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Semester 3 -->
+
+            <div class="form-group">
+
+                <label>📄 Semester 3 Marksheet</label>
+
+                <input type="file"
+                       name="sem3_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Semester 4 -->
+
+            <div class="form-group">
+
+                <label>📄 Semester 4 Marksheet</label>
+
+                <input type="file"
+                       name="sem4_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Semester 5 -->
+
+            <div class="form-group">
+
+                <label>📄 Semester 5 Marksheet</label>
+
+                <input type="file"
+                       name="sem5_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Semester 6 -->
+
+            <div class="form-group">
+
+                <label>📄 Semester 6 Marksheet</label>
+
+                <input type="file"
+                       name="sem6_marksheet"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <button type="submit" class="upload-btn">
+                📤 Upload Marksheets
+            </button>
+
+        </form>
+
+
+        <br>
+
+        <a href="{{ url_for('home') }}" class="back-link">
+            ← Back
+        </a>
+
+    </div>
+
+</body>
+
+</html>

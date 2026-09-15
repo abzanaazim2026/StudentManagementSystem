@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h2 align="center">Student Management System</h2>
+
+    <h3 align="center">Admin Login</h3>
+
+    <form action="/" method="POST">
+
+        <input type="text" 
+               name="username" 
+               placeholder="Enter Username" 
+               required>
+
+
+        <input type="password" 
+               name="password" 
+               placeholder="Enter Password" 
+               required>
+
+
+        <button type="submit">Login</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

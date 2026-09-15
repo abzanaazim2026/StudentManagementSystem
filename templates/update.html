@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 align="center">✏️ Update Student</h1>
+
+    <form method="POST">
+
+        <input type="hidden" name="id" value="{{ student[0] }}">
+
+        <label>Student Name</label><br>
+        <input type="text" name="name" value="{{ student[1] }}" required>
+        <br><br>
+
+        <label>Roll Number</label><br>
+        <input type="text" name="roll" value="{{ student[2] }}" required>
+        <br><br>
+
+        <label>Department</label><br>
+        <input type="text" name="department" value="{{ student[3] }}" required>
+        <br><br>
+
+        <label>Year</label><br>
+        <input type="text" name="year" value="{{ student[4] }}" required>
+        <br><br>
+
+        <label>Gender</label><br>
+        <input type="text" name="gender" value="{{ student[5] }}" required>
+        <br><br>
+
+        <label>Phone</label><br>
+        <input type="text" name="phone" value="{{ student[6] }}" required>
+        <br><br>
+
+        <label>Email</label><br>
+        <input type="email" name="email" value="{{ student[7] }}" required>
+        <br><br>
+
+        <button type="submit">Update Student</button>
+
+    </form>
+
+    <br>
+
+    <a href="/viewstudents">
+        ⬅ Back to Update List
+    </a>
+
+</div>
+
+</body>
+</html>
